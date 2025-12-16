@@ -1,0 +1,24 @@
+# ---------------------------------
+# PHP ERROR LOGGING
+# ---------------------------------
+php_value log_errors On
+php_value error_log /home/htdocs/logs/php_error.log
+
+# ---------------------------------
+# SECURITY HARDENING
+# ---------------------------------
+Options -Indexes
+ServerSignature Off
+
+# ---------------------------------
+# DEFAULT INDEX
+# ---------------------------------
+DirectoryIndex index.php
+
+# ---------------------------------
+# BASIC PROTECTION FOR SENSITIVE FILES
+# ---------------------------------
+<FilesMatch "(^\.|core\.php|\.env|\.ini|\.log)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
